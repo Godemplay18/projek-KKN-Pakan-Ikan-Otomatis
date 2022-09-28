@@ -1,9 +1,9 @@
+#include <ESP32Servo.h>
 #ifndef SERVO_H
 #define SERVO_H
-#include <Servo.h>
 
 Servo servo1; Servo servo2;
-int dly;
+int dly , s;
 
 const int pinPakan = 33; const int pinMix = 32;
 
@@ -16,7 +16,7 @@ void servoSetup () {
 }
 
 void servoPakanOpen () {
-  dly = (200 * 1000) / 150; //bps
+  dly = (jumlah_pakan * 1000) / 131; //bps
   Serial.println("Servo Pakan Open");
   servo1.write (35);
   delay (dly);
@@ -27,7 +27,8 @@ void servoPakanOpen () {
 
 void servoMixOpen () {
   Serial.println("Servo Mix Open");
-  servo2.write (75);
+  servo2.write (s);
+  s = s - 10;
   delay (2000);
   servo2.write (180);
   delay (2000);

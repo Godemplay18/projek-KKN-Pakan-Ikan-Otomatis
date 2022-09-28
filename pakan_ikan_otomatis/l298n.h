@@ -24,7 +24,7 @@ void l298nSetup () {
 }
 
 void probPump () {
-  dly2 = (200 * 250) / 10; //pbs;
+  dly2 = (jumlah_pakan * 250) / 14.7; //pbs;
   Serial.println("Probiotik");
   digitalWrite(perisPin1, LOW);
   digitalWrite(perisPin2, HIGH);
@@ -41,7 +41,6 @@ void lemparPakan () {
   delay(5000);
   digitalWrite(M_en, LOW);
   delay(2000);
-
 }
 
 #endif

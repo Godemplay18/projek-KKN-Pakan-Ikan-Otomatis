@@ -32,14 +32,15 @@ void loop() {
       servoPakanOpen ();
       probPump();
       mixPakan();
+      s = 70;
 
       unsigned long checkpoint_15 = millis ();
-      while (millis () - checkpoint_15 <=  60 * 1000) {
+      while (millis () - checkpoint_15 <=  15* 60 * 1000) {
         unsigned long checkpoint_1 = millis ();
 
         servoMixOpen();
         lemparPakan();
-        while (millis () - checkpoint_1 <= 10000) {
+        while (millis () - checkpoint_1 <= 60 * 1000) {
 
         }
       }
